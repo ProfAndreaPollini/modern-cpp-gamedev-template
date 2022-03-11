@@ -1,11 +1,13 @@
 #include <iostream>
-#include <memory>
 
-#include "tinytmx.hpp"
+
+
 
 int main() {
+  json j;
+  j["name"] = "John Doe";
   std::cout << "Hello, World!" << std::endl;
-  spdlog::info("Hello, World2!");
+  spdlog::info("Hello, World2! {}", j.dump());
 
   auto map_ptr = std::make_unique<tinytmx::Map>();
 
